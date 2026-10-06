@@ -4,21 +4,65 @@
     <meta charset="UTF-8">
     <title>Title</title>
     <style>
+        h6 {
+            font-size: 15px;
+        }
+
         .h2-text {
             color: red;
+        }
+
+        .h6-text {
+            color: yellow;
+        }
+
+        #k {
+            color: aqua;
+        }
+
+        div #k6 {
+            color: blueviolet;
+        }
+
+        .python > a {
+            color: red;
+        }
+
+        input[type="text"] {
+            background-color: blue;
+        }
+
+        ul > li:nth-child(2) {
+            color: coral;
         }
     </style>
 </head>
 <body>
-<h1>hello</h1>
-<h2 class="h2-text">World</h2>
-<p id="p1">Переменные <span style="color: brown">окружения (.env):</span> Никогда не отправляйте файлы с паролями,
-    токенами и ключами от баз данных в Git. Шаблон
-    !.env.example полезен — он позволит загрузить в репозиторий «пустышку» (инструкцию для других разработчиков, какие
-    переменные нужно создать).</p>
+<div class="python">
+    <h1>hello</h1>
+    <h1>hello again</h1>
+    <h2 class="h2-text">World</h2>
+    <h4 id="k">Petya</h4>
+    <h6 id="k6" class="h2-text h6-text">info</h6>
 
-<a href="https://www.python.org/" target="_blank">Python</a>
+    <p id="num-1">Переменные <span style="color: brown">окружения (.env):</span> Никогда не отправляйте файлы с
+        паролями,
+        токенами и ключами от баз данных в Git. Шаблон
+        !.env.example полезен — он позволит загрузить в репозиторий «пустышку» (инструкцию для других разработчиков,
+        какие
+        переменные нужно создать).</p>
 
+    <a href="https://www.python.org/" target="_blank">Python</a>
+
+    <ul>
+        <li>Пункт 1</li>
+        <li>Пункт 2</li>
+    </ul>
+    <ol>
+        <li>Первый пункт</li>
+        <li>Второй пункт</li>
+    </ol>
+</div>
 <p></p>
 <img src="https://www.python.org/static/img/python-logo.png" alt="python.png" style="width: 250px">
 <label>
@@ -41,7 +85,7 @@
 
 <table>
     <thead>
-    <tr>
+    <tr class="zag">
         <td>Ячейка 1</td>
         <td>Ячейка 2</td>
     </tr>
@@ -54,5 +98,9 @@
     </tr>
     </thead>
 </table>
+
+<div class="java">
+    <a href="https://www.python.org/" target="_blank">Java</a>
+</div>
 </body>
 </html>
