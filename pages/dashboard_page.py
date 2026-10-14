@@ -7,19 +7,19 @@ class DashboardPage(BasePage):
     def __init__(self, page: Page):
         super().__init__(page)
 
-        self.dashboard_title = page.get_by_test_id("dashboard_toolbar_title_text")
+        self.dashboard_title = page.get_by_test_id("dashboard-toolbar-title-text")
 
-        self.students_title = page.get_by_test_id("students_widget_title_text")
-        self.students_chart = page.get_by_test_id("students_bar_chart").locator("svg")
+        self.students_title = page.get_by_test_id("students-widget-title-text")
+        self.students_chart = page.get_by_test_id("students-bar-chart").locator("svg")
 
-        self.courses_title = page.get_by_test_id("courses_widget_title_text")
-        self.courses_chart = page.get_by_test_id("courses_pie_chart").locator("svg")
+        self.courses_title = page.get_by_test_id("courses_widget-title-text")
+        self.courses_chart = page.get_by_test_id("courses-pie-chart").locator("svg")
 
-        self.activities_title = page.get_by_test_id("activities_widget_title_text")
-        self.activities_chart = page.get_by_test_id("activities_line_chart").locator("svg")
+        self.activities_title = page.get_by_test_id("activities-widget-title-text")
+        self.activities_chart = page.get_by_test_id("activities-line-chart").locator("svg")
 
-        self.scores_title = page.get_by_test_id("scores_widget_title_text")
-        self.scores_chart = page.get_by_test_id("scores_scatter_chart").locator("svg")
+        self.scores_title = page.get_by_test_id("scores-widget-title-text")
+        self.scores_chart = page.get_by_test_id("scores-scatter-chart").locator("svg")
 
 
     def check_visible_dashboard_title(self):
