@@ -1,3 +1,6 @@
 pytest_plugins = (
-    "fixtures.browers",
+    "fixtures.browsers",
+    "fixtures.pages"
 )
+
+# Добавляются модули с фикстурами

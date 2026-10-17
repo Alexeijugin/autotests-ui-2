@@ -35,13 +35,13 @@ with sync_playwright() as playwright:
     expect(toolbar_title).to_be_visible()
     expect(toolbar_title).to_have_text("Courses")
 
-    empty_view_title = page.get_by_test_id("courses-list-empty-view-title-text")
+    empty_view_title = page.get_by_test_id("courses-list-view-view-title-text")
     expect(empty_view_title).to_be_visible()
     expect(empty_view_title).to_have_text("There is no results")
 
-    empty_view_icon = page.get_by_test_id("courses-list-empty-view-icon")
+    empty_view_icon = page.get_by_test_id("courses-list-view-view-icon")
     expect(empty_view_icon).to_be_visible()
 
-    empty_view_description_text = page.get_by_test_id("courses-list-empty-view-description-text")
+    empty_view_description_text = page.get_by_test_id("courses-list-view-view-description-text")
     expect(empty_view_description_text).to_be_visible()
     expect(empty_view_description_text).to_have_text("Results from the load test pipeline will be displayed here")

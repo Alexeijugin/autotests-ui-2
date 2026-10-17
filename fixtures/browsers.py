@@ -19,13 +19,13 @@ def initialize_browser_state(playwright: Playwright) -> None:
     page.goto("https://nikita-filonov.github.io/qa-automation-engineer-ui-course/#/auth/registration")
 
     email_input = page.get_by_test_id('registration-form-email-input').locator('input')
-    email_input.fill('alex@gmail.com')
+    email_input.fill('username@gmail.com')
 
     username_input = page.get_by_test_id('registration-form-username-input').locator('input')
-    username_input.fill('alex')
+    username_input.fill('username')
 
     password_input = page.get_by_test_id('registration-form-password-input').locator('input')
-    password_input.fill('alex')
+    password_input.fill('username')
 
     registration_button = page.get_by_test_id('registration-page-registration-button')
     registration_button.click()
