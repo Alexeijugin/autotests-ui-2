@@ -1,7 +1,9 @@
 from playwright.sync_api import Page, expect
 
 from components.courses.create_course_exercise_form_component import CreateCourseExerciseFormComponent
+from components.courses.create_course_exercises_toolbar_view_component import CreateCourseExercisesToolbarViewComponent
 from components.courses.create_course_form_component import CreateCourseFormComponent
+from components.courses.create_course_toolbar_view_component import CreateCourseToolbarViewComponent
 from components.view.empty_view_components import EmptyViewComponents
 from components.view.image_upload_widget_component import ImageUploadWidgetComponent
 from pages.base_page import BasePage
@@ -16,43 +18,13 @@ class CreateCoursePage(BasePage):
         self.exercises_empty_view = EmptyViewComponents(page, "create-course-exercises")
         #  Компонент с блоком для заполнения формы задания + методы
         self.create_exercise_form = CreateCourseExerciseFormComponent(page)
-        # Форма создания курса
+        # Компонент. Форма создания курса
         self.create_course_form = CreateCourseFormComponent(page)
+        # Компонент. Заголовок и кнопка создания курса
+        self.create_course_toolbar_view = CreateCourseToolbarViewComponent(page)
+        # Компонент. Кнопка и заголовок создания задания
+        self.create_course_exercise_toolbar_view = CreateCourseExercisesToolbarViewComponent(page)
 
-
-        # Заголовок и кнопка создания курса
-        self.create_course_title = page.get_by_test_id("create-course-toolbar-title-text")
-        self.create_course_button = page.get_by_test_id("create-course-toolbar-create-course-button")
-
-        # Кнопка и заголовок создания задания
-        self.exercises_title = page.get_by_test_id('create-course-exercises-box-toolbar-title-text')
-        self.create_exercises_button = page.get_by_test_id('create-course-exercises-box-toolbar-create-exercise-button')
-
-
-
-    def check_visible_create_course_title(self):
-        expect(self.create_course_title).to_be_visible()
-        expect(self.create_course_title).to_have_text("Create course")
-
-    def check_visible_create_course_button(self):
-        expect(self.create_course_button).to_be_visible()
-
-    def check_disabled_create_course_button(self):
-        expect(self.create_course_button).to_be_disabled()
-
-    def click_create_course_button(self):
-        self.create_course_button.click()
-
-
-    def check_visible_exercises_title(self):
-        expect(self.exercises_title).to_be_visible()
-        expect(self.exercises_title).to_have_text("Exercises")
-
-    def check_visible_create_exercise_button(self):
-        expect(self.create_exercises_button).to_be_visible()
-
-    def click_create_exercise_button(self):
-        self.create_exercises_button.click()
 
     def check_visible_exercises_empty_view(self):
         self.exercises_empty_view.check_visible_empty_view(

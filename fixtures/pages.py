@@ -7,7 +7,12 @@ from pages.courses_list_page import CoursesListPage
 from pages.create_course_page import CreateCoursePage
 from pages.dashboard_page import DashboardPage
 from pages.login_page import LoginPage
+from pages.registration_page import RegistrationPage
 
+
+@pytest.fixture
+def registration_page(chromium_page: Page):
+    return RegistrationPage(chromium_page)
 
 @pytest.fixture
 def login_page(chromium_page: Page) -> LoginPage:
@@ -21,6 +26,7 @@ def courses_list_page(chromium_page_with_state: Page) -> CoursesListPage:
 def create_course_page(chromium_page_with_state: Page) -> CreateCoursePage:
     return CreateCoursePage(page=chromium_page_with_state)
 
+# Используется без сохраненного снимка состояния контекста для теста с регистрацией. Без редиректа.
 @pytest.fixture
 def dashboard_page(chromium_page: Page) -> DashboardPage:
     return DashboardPage(page=chromium_page)
