@@ -1,0 +1,12 @@
+from enum import Enum, StrEnum
+
+
+class AllureTag(str, Enum):
+    # константа
+    COURSES = "COURSES"
+    DASHBOARD = "DASHBOARD"
+    REGRESSION = "REGRESSION"
+    USER_LOGIN = "USER_LOGIN"
+    NAVIGATION = "NAVIGATION"
+    REGISTRATION = "REGISTRATION"
+    AUTHORIZATION = "AUTHORIZATION"
