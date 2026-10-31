@@ -5,6 +5,7 @@ from allure_commons.types import Severity
 from pages.dashboard.dashboard_page import DashboardPage
 from tools.epics import AllureEpic
 from tools.features import AllureFeature
+from tools.routes import AppRoute
 from tools.stories import AllureStory
 from tools.tags import AllureTag
 
@@ -22,10 +23,10 @@ class Dashboard:
     @allure.title("Check displaying of dashboard page")
     @allure.severity(Severity.NORMAL)
     def test_dashboard_displaying(self, dashboard_page_with_state: DashboardPage):
-        dashboard_page_with_state.visit("https://nikita-filonov.github.io/qa-automation-engineer-ui-course/#/dashboard")
+        dashboard_page_with_state.visit(AppRoute.DASHBOARD)
 
         # 'username', т.к. такое имя был сохранен в слепке контекста
-        dashboard_page_with_state.navbar.check_visible('username')
+        dashboard_page_with_state.navbar.check_visible(settings.test_user.email)
         dashboard_page_with_state.sidebar.check_visible()
 
         dashboard_page_with_state.dashboard_toolbar_view.check_visible()

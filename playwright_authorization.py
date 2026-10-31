@@ -9,7 +9,7 @@ with sync_playwright() as playwright:
     email_input.fill("user.name@gmail.com")
 
     password_input = page.get_by_test_id("login-form-password-input").locator("input")
-    password_input.fill("password")
+    password_input.fill(settings.test_user.password)
 
     login_button = page.get_by_test_id("login-page-login-button")
     login_button.click()

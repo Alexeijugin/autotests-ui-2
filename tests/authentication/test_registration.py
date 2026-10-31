@@ -2,10 +2,12 @@ import allure
 import pytest
 from allure_commons.types import Severity
 
+from config import settings
 from pages.dashboard.dashboard_page import DashboardPage
 from pages.authentication.registration_page import RegistrationPage
 from tools.epics import AllureEpic
 from tools.features import AllureFeature
+from tools.routes import AppRoute
 from tools.stories import AllureStory
 from tools.tags import AllureTag
 
@@ -22,13 +24,14 @@ from tools.tags import AllureTag
 class TestRegistration:
     @allure.title("User registration with correct email, username and password")
     @allure.severity(Severity.CRITICAL)
+    @pytest.mark.xdist_group(name="authorization-group")
     def test_successful_registration(self, dashboard_page: DashboardPage, registration_page: RegistrationPage):  # Теперь используем фикстуру
-        registration_page.visit("https://nikita-filonov.github.io/qa-automation-engineer-ui-course/#/auth/registration")
+        registration_page.visit(AppRoute.REGISTRATION)
 
         registration_page.registration_from.fill(
-            email='user.name@gmail.com',
-            username='username',
-            password='password'
+            email=settings.test_user.email,
+            username=settings.test_user.username,
+            password=settings.test_user.password
         )
 
         registration_page.click_registration_button()
