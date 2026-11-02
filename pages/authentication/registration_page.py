@@ -12,7 +12,7 @@ class RegistrationPage(BasePage):
     def __init__(self, page: Page):
         super().__init__(page)
 
-        self.registration_from = RegistrationFormComponent(page)
+        self.registration_form = RegistrationFormComponent(page)
 
         self.registration_button = Button(page, "registration-page-registration-button", "Registration")
         self.login_link = Link(page, "registration-page-login-link", "Login")

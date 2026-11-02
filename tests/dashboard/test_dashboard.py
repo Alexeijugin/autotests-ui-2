@@ -2,6 +2,7 @@ import allure
 import pytest
 from allure_commons.types import Severity
 
+from config import settings
 from pages.dashboard.dashboard_page import DashboardPage
 from tools.epics import AllureEpic
 from tools.features import AllureFeature

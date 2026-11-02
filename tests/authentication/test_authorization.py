@@ -47,7 +47,7 @@ class TestAuthorization:
             self, registration_page: RegistrationPage, dashboard_page: DashboardPage, login_page: LoginPage
     ):
         registration_page.visit(AppRoute.REGISTRATION)
-        registration_page.registration_from.fill(
+        registration_page.registration_form.fill(
             email=settings.test_user.email,
             username=settings.test_user.username,
             password=settings.test_user.password
@@ -76,7 +76,7 @@ class TestAuthorization:
         login_page.visit(AppRoute.LOGIN)
         login_page.click_registration_link()
 
-        registration_page.registration_from.check_visible(email='', username='', password='')
+        registration_page.registration_form.check_visible(email='', username='', password='')
 
 
 

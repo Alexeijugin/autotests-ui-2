@@ -23,7 +23,7 @@ def initialize_browser_state(playwright: Playwright) -> None:
 
     registration_page = RegistrationPage(page)
     registration_page.visit(AppRoute.REGISTRATION)
-    registration_page.registration_from.fill(
+    registration_page.registration_form.fill(
         email=settings.test_user.email,  # Используем settings.test_user.email
         username=settings.test_user.username,  # Используем settings.test_user.username
         password=settings.test_user.password  # Используем settings.test_user.password)
